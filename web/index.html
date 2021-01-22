@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    Fore more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="flutter_web_folo">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>flutter_web_folo</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+  <style type="text/css">
+    .back-link a {
+      color: #4ca340;
+      text-decoration: none;
+      border-bottom: 1px #4ca340 solid;
+    }
+
+    .back-link a:hover,
+    .back-link a:focus {
+      color: #408536;
+      text-decoration: none;
+      border-bottom: 1px #408536 solid;
+    }
+  </style> -->
+
+  <style>
+    :root {
+      --size: 40vh;
+      --s: calc(var(--size) / 25);
+      --b: calc(var(--size) / 20);
+
+    }
+
+    body {
+      margin: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .loader {
+      position: relative;
+      width: var(--size);
+      height: var(--size);
+      overflow: hidden;
+      border-radius: 50%;
+      transform: rotate(175deg);
+    }
+
+
+    .loader span {
+      position: absolute;
+      top: calc(var(--b) * var(--i));
+      bottom: calc(var(--b) * var(--i));
+      left: calc(var(--b) * var(--i));
+      right: calc(var(--b) * var(--i));
+      border: var(--s) solid #0b0b0b;
+
+
+      border-top: var(--s) solid hsl(calc(21 * var(--i)), 89%, 50%);
+      border-left: var(--s) solid hsl(calc(21 * var(--i)), 89%, 50%);
+      border-radius: 50%;
+      animation: animate 1000ms alternate ease-in-out infinite;
+      animation-delay: calc(-.1s * var(--i));
+
+
+    }
+
+
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(90deg);
+      }
+    }
+  </style>
+</head>
+
+<body  style="height:100%; width:100%; overflow:auto;">
+
+  <!-- <div id="loader-wrapper">
+    <div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+  </div> -->
+  <div class="loader">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+    <span style="--i:4;"></span>
+    <span style="--i:5;"></span>
+    <span style="--i:6;"></span>
+    <span style="--i:7;"></span>
+    <span style="--i:8;"></span>
+    <span style="--i:9;"></span>
+  </div>
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+      });
+    }
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+	<script src="js/main.js"></script> -->
+</body>
+
+</html>
